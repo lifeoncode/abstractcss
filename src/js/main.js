@@ -1,3 +1,5 @@
+import "../scss/index.scss";
+
 import elements from "./elements.js";
 import applyPadding from "./padding.js";
 import applyMargin from "./margin.js";
