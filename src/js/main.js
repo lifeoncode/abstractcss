@@ -15,6 +15,7 @@ import applyHeight from "./height.js";
 import applyBackgroundImage from "./bg-image.js";
 import applyConditionalStyle from "./conditional-classes.js";
 import smoothScroll from "./util.js";
+import applyInteraction from "./interactions.js";
 
 window.addEventListener("load", smoothScroll);
 
@@ -57,5 +58,8 @@ elements.forEach((element) => {
   }
   if (element.className.includes("if-")) {
     applyConditionalStyle(element);
+  }
+  if (element.className.includes("_")) {
+    applyInteraction(element);
   }
 });
