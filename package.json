@@ -1,0 +1,20 @@
+{
+  "name": "ui_library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/js/main.js",
+  "style": "dist/css/index.css",
+  "scripts": {
+    "build": "",
+    "test": ""
+  },
+  "keywords": ["css", "ui", "library", "utilities", "framework"],
+  "author": {"name": "lifeoncode", "email": "nduduzo@yellogarden.co.za"},
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lifeoncode/ui_library.git"
+  },
+  "homepage": "https://lifeoncode.github.io/ui_library",
+  "private": false
+}
