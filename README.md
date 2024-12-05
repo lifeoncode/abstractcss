@@ -1,2 +1,2 @@
 # ui_library
-a utility ui library to prevent starting web projects from scratch
+I don't know what to name this... a utility ui library so I never have to look at css ever again🙂
