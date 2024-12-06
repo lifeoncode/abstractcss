@@ -151,6 +151,9 @@ out
 # vuepress v2.x temp and cache directory
 .temp
 
+# test folder
+test-folder/
+
 # Docusaurus cache and generated files
 .docusaurus
 
