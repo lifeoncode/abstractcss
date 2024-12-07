@@ -13,13 +13,9 @@ import applyBorderWidth from "./border-width.js";
 import applyBorderRadius from "./border-radius.js";
 import applyHeight from "./height.js";
 import applyBackgroundImage from "./bg-image.js";
-import applyConditionalStyle from "./conditional-classes.js";
-import smoothScroll from "./util.js";
 import applyInteraction from "./interactions.js";
 import applyGridColumn from "./grid-column.js";
 import applyGridRow from "./grid-row.js";
-
-window.addEventListener("load", smoothScroll);
 
 elements.forEach((element) => {
   if (element.className.includes("padding")) {
@@ -63,9 +59,6 @@ elements.forEach((element) => {
   }
   if (element.className.includes("bg-image")) {
     applyBackgroundImage(element);
-  }
-  if (element.className.includes("if-")) {
-    applyConditionalStyle(element);
   }
   if (element.className.includes("_")) {
     applyInteraction(element);

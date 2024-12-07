@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyWidthToElement = (element, classArr) => {
   if (classArr[1] === "tab" && window.screen.width <= 1080) {
@@ -39,7 +36,7 @@ const applyWidth = (element) => {
       }
     });
     allWidthClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length < 2 || classNameArr.length > 3) {
         throw Error("Out of bounds");
       } else {

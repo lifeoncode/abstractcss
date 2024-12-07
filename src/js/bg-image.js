@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-image-");
-};
+import splitElementClassName from "./util";
 
 const applyBackgroundImageToElement = (element, classArr) => {
   element.style.backgroundImage = `url("${classArr[1]}")`;
@@ -20,7 +17,7 @@ const applyBackgroundImage = (element) => {
       }
     });
     allBackgroundImageClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-image-");
       if (classNameArr.length !== 2) {
         throw Error("Out of bounds");
       } else {

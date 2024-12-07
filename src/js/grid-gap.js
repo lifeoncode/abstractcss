@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyGridGapToElement = (element, classArr, classArrLength) => {
   if (classArrLength === 3) {
@@ -36,7 +33,7 @@ const applyGridGap = (element) => {
       i.includes("grid-gap") && allGridGapClasses.push(i);
     });
     allGridGapClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length < 3 || classNameArr.length > 4) {
         throw Error("Out of bounds");
       } else {

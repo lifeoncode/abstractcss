@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyBorderRadiusToElement = (element, classArr, classNameArrLength) => {
   if (classNameArrLength === 3) {
@@ -56,7 +53,7 @@ const applyBorderRadius = (element) => {
       i.includes("round-corner") && allBorderRadiusClasses.push(i);
     });
     allBorderRadiusClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length < 3 || classNameArr.length > 5) {
         throw Error("Out of bounds");
       } else {

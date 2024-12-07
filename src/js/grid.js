@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyGridToElement = (element, classArr, classNameArrLength) => {
   element.style.display = "grid";
@@ -30,7 +27,7 @@ const applyGrid = (element) => {
       }
     });
     allGridClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length < 2 || classNameArr.length > 3) {
         throw Error("Out of bounds");
       } else {

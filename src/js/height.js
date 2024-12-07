@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyHeightToElement = (element, classArr) => {
   if (classArr[1] !== "min" || classArr[1] !== "med" || classArr[1] !== "max") {
@@ -19,7 +16,7 @@ const applyHeight = (element) => {
       }
     });
     allHeightClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length !== 2) {
         throw Error("Out of bounds");
       } else {

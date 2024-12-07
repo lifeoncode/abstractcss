@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyPaddingToElement = (element, classArr, classArrLength) => {
   if (classArrLength === 2) {
@@ -42,7 +39,7 @@ const applyPadding = (element) => {
       i.includes("padding") && allPaddingClasses.push(i);
     });
     allPaddingClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length < 2 || classNameArr.length > 3) {
         throw Error("Out of bounds");
       } else {

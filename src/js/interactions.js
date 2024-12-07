@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const createStyleTag = () => {
   let styleTag = document.querySelector("style");
@@ -18,7 +15,7 @@ const applyHoverInteraction = (element, classNameArr) => {
   let style = createStyleTag();
 
   classNameArr.forEach((singleClass) => {
-    let singleClassArr = splitElementClassName(singleClass);
+    let singleClassArr = splitElementClassName(singleClass, "-");
 
     if (singleClassArr[1] == "scale") {
       style.textContent += `

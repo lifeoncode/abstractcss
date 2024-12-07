@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 // [font, size, tab, 20px]
 // [font, size, tab, min]
@@ -43,7 +40,7 @@ const applyFontSize = (element) => {
       i.includes("font-size") && allFontSizeClasses.push(i);
     });
     allFontSizeClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length < 3 || classNameArr > 4) {
         throw Error("Out of bounds");
       } else {

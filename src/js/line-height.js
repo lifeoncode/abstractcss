@@ -1,8 +1,5 @@
 "use strict";
-
-const splitElementClassName = (className) => {
-  return className.split("-");
-};
+import splitElementClassName from "./util";
 
 const applyLineHeightToElement = (element, classArr) => {
   element.style.lineHeight = `${classArr[2]}`;
@@ -15,7 +12,7 @@ const applyLineHeight = (element) => {
       i.includes("line-height") && allLineHeightClasses.push(i);
     });
     allLineHeightClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
+      let classNameArr = splitElementClassName(i, "-");
       if (classNameArr.length !== 3) {
         throw Error("Out of bounds");
       } else {
