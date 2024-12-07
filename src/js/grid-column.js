@@ -5,7 +5,6 @@ const splitElementClassName = (className) => {
 };
 
 const applyGridColumnToElement = (element, classNameArr) => {
-  console.log(classNameArr);
   if (classNameArr[1] == "start") {
     element.style.gridColumnStart = `${classNameArr[2]}`;
   }

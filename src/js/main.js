@@ -17,6 +17,7 @@ import applyConditionalStyle from "./conditional-classes.js";
 import smoothScroll from "./util.js";
 import applyInteraction from "./interactions.js";
 import applyGridColumn from "./grid-column.js";
+import applyGridRow from "./grid-row.js";
 
 window.addEventListener("load", smoothScroll);
 
@@ -35,6 +36,9 @@ elements.forEach((element) => {
   }
   if (element.className.includes("column")) {
     applyGridColumn(element);
+  }
+  if (element.className.includes("row")) {
+    applyGridRow(element);
   }
   if (element.className.includes("color")) {
     applyColor(element);
