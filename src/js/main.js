@@ -16,6 +16,7 @@ import applyBackgroundImage from "./bg-image.js";
 import applyConditionalStyle from "./conditional-classes.js";
 import smoothScroll from "./util.js";
 import applyInteraction from "./interactions.js";
+import applyGridColumn from "./grid-column.js";
 
 window.addEventListener("load", smoothScroll);
 
@@ -31,6 +32,9 @@ elements.forEach((element) => {
   }
   if (element.className.includes("grid-gap")) {
     applyGridGap(element);
+  }
+  if (element.className.includes("column")) {
+    applyGridColumn(element);
   }
   if (element.className.includes("color")) {
     applyColor(element);
