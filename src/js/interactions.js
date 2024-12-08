@@ -93,6 +93,8 @@ const applyInteraction = (element) => {
     allHoverClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i);
       if (classNameArr.length < 2 || classNameArr.length > 4) {
+        console.log(classNameArr)
+
         throw Error("Out of bounds");
       } else {
         applyHoverInteraction(element, allHoverClasses);
@@ -102,6 +104,7 @@ const applyInteraction = (element) => {
     allActiveClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i);
       if (classNameArr.length < 2 || classNameArr.length > 4) {
+        console.log(classNameArr)
         throw Error("Out of bounds");
       } else {
         applyActiveInteraction(element, allActiveClasses);
@@ -111,6 +114,7 @@ const applyInteraction = (element) => {
     allFocusClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i);
       if (classNameArr.length < 2 || classNameArr.length > 4) {
+        console.log(classNameArr)
         throw Error("Out of bounds");
       } else {
         applyFocusInteraction(element, allFocusClasses);

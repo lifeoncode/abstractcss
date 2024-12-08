@@ -1,6 +1,5 @@
 "use strict";
 
-import splitElementClassName from "./util";
 import applyElementStyles from "./main";
 
 const handleMobile = (element, className) => {
@@ -9,14 +8,6 @@ const handleMobile = (element, className) => {
 
   if (window.screen.width <= 600) {
     allClasses.forEach((i) => {
-      if (
-        splitElementClassName(styleClass, "-")[0] ==
-        splitElementClassName(i, "-")[0]
-      ) {
-        let index = allClasses.indexOf(i);
-        allClasses.splice(index, 1);
-      }
-
       if (i.includes("mob:")) {
         let index = allClasses.indexOf(i);
         allClasses[index] = styleClass;
@@ -33,14 +24,6 @@ const handleTablet = (element, className) => {
 
   if (window.screen.width > 600 && window.screen.width <= 1080) {
     allClasses.forEach((i) => {
-      if (
-        splitElementClassName(styleClass, "-")[0] ==
-        splitElementClassName(i, "-")[0]
-      ) {
-        let index = allClasses.indexOf(i);
-        allClasses.splice(index, 1);
-      }
-
       if (i.includes("tab:")) {
         let index = allClasses.indexOf(i);
         allClasses[index] = styleClass;

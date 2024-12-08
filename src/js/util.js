@@ -1,4 +1,4 @@
-const splitElementClassName = (className, splitFrom) => {
+const splitElementClassName = (className, splitFrom='-') => {
   return className.split(splitFrom);
 };
 

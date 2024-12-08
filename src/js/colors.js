@@ -6,7 +6,6 @@ const applyColorToElement = (element, classArr, classArrLength) => {
     element.style.color = `${classArr[1]}`;
   } else if (classArrLength === 3) {
     if (classArr[0] === "bg" || classArr[0] === "fill") {
-      console.log("bg found", element);
       element.style.backgroundColor = `${classArr[2]}`;
     } else if (classArr[0] === "border") {
       element.style.borderColor = `${classArr[2]}`;
@@ -15,7 +14,6 @@ const applyColorToElement = (element, classArr, classArrLength) => {
 };
 
 const applyColor = (element) => {
-  console.log("working...", element);
   try {
     let allColorClasses = [];
     element.classList.forEach((i) => {
