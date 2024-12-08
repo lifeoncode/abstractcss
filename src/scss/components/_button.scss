@@ -80,7 +80,7 @@
   }
 
   &:hover {
-    background-color: lighten($color: black, $amount: 20%);
+    background-color: #444;
   }
   &:active {
     transform: scale(0.95);

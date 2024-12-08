@@ -1197,7 +1197,7 @@ span a {
   color: white;
 }
 .btn:hover, .btn-small:hover, .btn-large:hover, .btn-sharp:hover, .btn-pill:hover, .btn-round:hover, .btn-round-small:hover, .btn-round-large:hover, .btn-outline:hover, .btn-ghost:hover {
-  background-color: #333333;
+  background-color: #444;
 }
 .btn:active, .btn-small:active, .btn-large:active, .btn-sharp:active, .btn-pill:active, .btn-round:active, .btn-round-small:active, .btn-round-large:active, .btn-outline:active, .btn-ghost:active {
   transform: scale(0.95);
