@@ -87,7 +87,11 @@ const applyElementStyles = () => {
       if (elClass.startsWith("row")) {
         applyGridRow(element);
       }
-      if (elClass.startsWith("color") || elClass.startsWith("bg-color")) {
+      if (
+        elClass.startsWith("color") ||
+        elClass.startsWith("bg-color") ||
+        elClass.startsWith("border-color")
+      ) {
         applyColor(element);
       }
       if (elClass.startsWith("width")) {
@@ -105,7 +109,7 @@ const applyElementStyles = () => {
       if (elClass.startsWith("border-width")) {
         applyBorderWidth(element);
       }
-      if (elClass.startsWith("round-corner")) {
+      if (elClass.startsWith("border-radius")) {
         applyBorderRadius(element);
       }
       if (elClass.startsWith("bg-image")) {

@@ -4,7 +4,7 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1080px) {
   h1 {
     font-size: 42px;
   }
@@ -13,6 +13,28 @@
   }
   h3 {
     font-size: 34px;
+  }
+
+  .table {
+    th,
+    .th {
+      font-size: 15px;
+    }
+
+    td,
+    .td {
+      font-size: 14px;
+    }
+
+    &-minimal {
+      @extend .table;
+      th,
+      td,
+      .th,
+      .td {
+        padding: 10px 5px;
+      }
+    }
   }
 }
 

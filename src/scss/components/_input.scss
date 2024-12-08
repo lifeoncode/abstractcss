@@ -1,0 +1,42 @@
+.input {
+  background-color: #ffffff6d;
+  color: #000;
+  font-size: 15px 20px;
+  border: 0;
+  border-radius: 4px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+  display: inline-block;
+  width: 100%;
+
+  &-small {
+    @extend .input;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  &-large {
+    @extend .input;
+    padding: 20px 30px;
+    font-size: 18px;
+  }
+
+  &-pill {
+    @extend .input;
+    border-radius: 30px;
+  }
+
+  &-outline {
+    @extend .input;
+    border: 1px solid #00000036;
+    background-color: transparent;
+    &:focus {
+      border-color: #000000b4;
+    }
+  }
+
+  &:focus {
+    background-color: #ffffffcb;
+  }
+}

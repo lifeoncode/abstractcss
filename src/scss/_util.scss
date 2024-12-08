@@ -7,14 +7,50 @@
 
 ::-webkit-scrollbar {
   background-color: inherit;
-  width: 5px;
+  width: 4px;
   &-thumb {
     border-radius: 30px;
-    background-color: #c1c1c1;
+    background-color: #dfdfdf;
   }
 }
 
 img {
   display: block;
   width: 100%;
+}
+
+.overflow {
+  &-scroll {
+    overflow: scroll;
+  }
+  &-auto {
+    overflow: auto;
+  }
+  &-hidden {
+    overflow: hidden;
+  }
+
+  &-x {
+    &-scroll {
+      overflow-x: scroll;
+    }
+    &-auto {
+      overflow-x: auto;
+    }
+    &-hidden {
+      overflow-x: hidden;
+    }
+  }
+
+  &-y {
+    &-scroll {
+      overflow-y: scroll;
+    }
+    &-auto {
+      overflow-y: auto;
+    }
+    &-hidden {
+      overflow-y: hidden;
+    }
+  }
 }

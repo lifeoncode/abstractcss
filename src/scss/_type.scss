@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 h1 {
   font-size: 45px;
 }
@@ -21,9 +27,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+button,
+input,
+form {
   span,
   a {
+    font-size: inherit;
     font: inherit;
     line-height: inherit;
   }
@@ -42,6 +53,17 @@ a,
 span {
   text-decoration: none;
   display: inline-block;
+}
+
+a {
+  span {
+    font: inherit;
+  }
+}
+span {
+  a {
+    font: inherit;
+  }
 }
 
 // font transform
@@ -118,11 +140,11 @@ span {
 // font weights
 .font-weight {
   &-100,
-  &-thin {
+  &-light {
     font-weight: 100;
   }
   &-200,
-  &-thin {
+  &-light {
     font-weight: 200;
   }
   &-300 {
