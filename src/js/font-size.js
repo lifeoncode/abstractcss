@@ -37,7 +37,7 @@ const applyFontSize = (element) => {
   try {
     let allFontSizeClasses = [];
     element.classList.forEach((i) => {
-      i.includes("font-size") && allFontSizeClasses.push(i);
+      i.startsWith("font-size") && allFontSizeClasses.push(i);
     });
     allFontSizeClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

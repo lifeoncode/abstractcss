@@ -9,7 +9,7 @@ const applyBorderWidth = (element) => {
   try {
     let allBorderWidthClasses = [];
     element.classList.forEach((i) => {
-      i.includes("border-width") && allBorderWidthClasses.push(i);
+      i.startsWith("border-width") && allBorderWidthClasses.push(i);
     });
     allBorderWidthClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

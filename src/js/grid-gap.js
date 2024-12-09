@@ -30,7 +30,7 @@ const applyGridGap = (element) => {
   try {
     let allGridGapClasses = [];
     element.classList.forEach((i) => {
-      i.includes("grid-gap") && allGridGapClasses.push(i);
+      i.startsWith("grid-gap") && allGridGapClasses.push(i);
     });
     allGridGapClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

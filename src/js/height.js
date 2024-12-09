@@ -11,7 +11,7 @@ const applyHeight = (element) => {
   try {
     let allHeightClasses = [];
     element.classList.forEach((i) => {
-      if (i.includes("height")) {
+      if (i.startsWith("height")) {
         allHeightClasses.push(i);
       }
     });

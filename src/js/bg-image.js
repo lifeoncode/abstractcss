@@ -12,7 +12,7 @@ const applyBackgroundImage = (element) => {
   try {
     let allBackgroundImageClasses = [];
     element.classList.forEach((i) => {
-      if (i.includes("bg-image")) {
+      if (i.startsWith("bg-image")) {
         allBackgroundImageClasses.push(i);
       }
     });

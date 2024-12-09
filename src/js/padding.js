@@ -36,7 +36,7 @@ const applyPadding = (element) => {
   try {
     let allPaddingClasses = [];
     element.classList.forEach((i) => {
-      i.includes("padding") && allPaddingClasses.push(i);
+      i.startsWith("padding") && allPaddingClasses.push(i);
     });
     allPaddingClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

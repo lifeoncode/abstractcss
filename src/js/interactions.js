@@ -85,15 +85,15 @@ const applyInteraction = (element) => {
     let allActiveClasses = [];
     let allFocusClasses = [];
     element.classList.forEach((i) => {
-      i.includes("_hover") && allHoverClasses.push(i);
-      i.includes("_active") && allActiveClasses.push(i);
-      i.includes("_focus") && allFocusClasses.push(i);
+      i.startsWith("_hover") && allHoverClasses.push(i);
+      i.startsWith("_active") && allActiveClasses.push(i);
+      i.startsWith("_focus") && allFocusClasses.push(i);
     });
 
     allHoverClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i);
       if (classNameArr.length < 2 || classNameArr.length > 4) {
-        console.log(classNameArr)
+        console.log(classNameArr);
 
         throw Error("Out of bounds");
       } else {
@@ -104,7 +104,7 @@ const applyInteraction = (element) => {
     allActiveClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i);
       if (classNameArr.length < 2 || classNameArr.length > 4) {
-        console.log(classNameArr)
+        console.log(classNameArr);
         throw Error("Out of bounds");
       } else {
         applyActiveInteraction(element, allActiveClasses);
@@ -114,7 +114,7 @@ const applyInteraction = (element) => {
     allFocusClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i);
       if (classNameArr.length < 2 || classNameArr.length > 4) {
-        console.log(classNameArr)
+        console.log(classNameArr);
         throw Error("Out of bounds");
       } else {
         applyFocusInteraction(element, allFocusClasses);

@@ -9,7 +9,7 @@ const applyLineHeight = (element) => {
   try {
     let allLineHeightClasses = [];
     element.classList.forEach((i) => {
-      i.includes("line-height") && allLineHeightClasses.push(i);
+      i.startsWith("line-height") && allLineHeightClasses.push(i);
     });
     allLineHeightClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

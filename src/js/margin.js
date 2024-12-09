@@ -36,7 +36,7 @@ const applyMargin = (element) => {
   try {
     let allMarginClasses = [];
     element.classList.forEach((i) => {
-      i.includes("margin") && allMarginClasses.push(i);
+      i.startsWith("margin") && allMarginClasses.push(i);
     });
     allMarginClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

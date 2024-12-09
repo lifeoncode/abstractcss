@@ -50,7 +50,7 @@ const applyBorderRadius = (element) => {
   try {
     let allBorderRadiusClasses = [];
     element.classList.forEach((i) => {
-      i.includes("border-radius") && allBorderRadiusClasses.push(i);
+      i.startsWith("border-radius") && allBorderRadiusClasses.push(i);
     });
     allBorderRadiusClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");

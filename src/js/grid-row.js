@@ -17,7 +17,7 @@ const applyGridRow = (element) => {
   try {
     let allGridRowClasses = [];
     element.classList.forEach((i) => {
-      i.includes("row") && allGridRowClasses.push(i);
+      i.startsWith("row") && allGridRowClasses.push(i);
     });
     allGridRowClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");
