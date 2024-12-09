@@ -851,6 +851,12 @@ img {
 .flex-space-between {
   justify-content: space-between;
 }
+.flex-align-start {
+  align-items: flex-start;
+}
+.flex-align-end {
+  align-items: flex-end;
+}
 
 .grid-auto {
   display: grid;
