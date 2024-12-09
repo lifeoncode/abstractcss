@@ -1,7 +1,15 @@
 // body container
 .container {
-  width: 1400px;
   margin: 0 auto;
+  width: 1600px;
+  transition: all 0.3s ease;
+
+  @media only screen and (max-width: 1720px) {
+    width: 1400px;
+  }
+  @media only screen and (max-width: 1420px) {
+    width: 94%;
+  }
 }
 
 // positioning
@@ -719,7 +727,7 @@
 }
 
 // border radius
-.round-corners {
+.border-radius {
   &-min {
     border-radius: 5px;
   }
@@ -786,7 +794,7 @@
 .grid-auto {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 10px;
 }
 

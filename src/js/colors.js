@@ -17,7 +17,13 @@ const applyColor = (element) => {
   try {
     let allColorClasses = [];
     element.classList.forEach((i) => {
-      i.includes("color") && allColorClasses.push(i);
+      if (
+        i.startsWith("color") ||
+        i.startsWith("bg-color") ||
+        i.startsWith("border-color")
+      ) {
+        allColorClasses.push(i);
+      }
     });
     allColorClasses.forEach((i) => {
       let classNameArr = splitElementClassName(i, "-");
