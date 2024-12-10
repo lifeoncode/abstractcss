@@ -7,20 +7,14 @@ const applyWidthToElement = (element, classArr) => {
   }
 };
 
-const applyWidth = (element) => {
+const applyWidth = (element, className) => {
   try {
-    let allWidthClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("width") && allWidthClasses.push(i);
-    });
-    allWidthClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length < 2 || classNameArr.length > 3) {
-        throw Error("Out of bounds");
-      } else {
-        applyWidthToElement(element, classNameArr);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length < 2 || classNameArr.length > 3) {
+      throw Error("Out of bounds");
+    } else {
+      applyWidthToElement(element, classNameArr);
+    }
   } catch (error) {
     console.error(`Error while applying width to: ${element}\n${error}`);
   }

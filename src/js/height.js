@@ -7,22 +7,14 @@ const applyHeightToElement = (element, classArr) => {
   }
 };
 
-const applyHeight = (element) => {
+const applyHeight = (element, className) => {
   try {
-    let allHeightClasses = [];
-    element.classList.forEach((i) => {
-      if (i.startsWith("height")) {
-        allHeightClasses.push(i);
-      }
-    });
-    allHeightClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length !== 2) {
-        throw Error("Out of bounds");
-      } else {
-        applyHeightToElement(element, classNameArr);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length !== 2) {
+      throw Error("Out of bounds");
+    } else {
+      applyHeightToElement(element, classNameArr);
+    }
   } catch (error) {
     console.error(`Error while applying height to: ${element}\n${error}`);
   }

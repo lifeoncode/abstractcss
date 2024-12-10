@@ -13,20 +13,14 @@ const applyGridRowToElement = (element, classNameArr) => {
   }
 };
 
-const applyGridRow = (element) => {
+const applyGridRow = (element, className) => {
   try {
-    let allGridRowClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("row") && allGridRowClasses.push(i);
-    });
-    allGridRowClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length !== 3) {
-        throw Error("Out of bounds");
-      } else {
-        applyGridRowToElement(element, classNameArr);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length !== 3) {
+      throw Error("Out of bounds");
+    } else {
+      applyGridRowToElement(element, classNameArr);
+    }
   } catch (error) {
     console.error(`Error while applying grid row to: ${element}\n${error}`);
   }

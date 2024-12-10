@@ -8,22 +8,14 @@ const applyBackgroundImageToElement = (element, classArr) => {
   element.style.backgroundSize = "cover";
 };
 
-const applyBackgroundImage = (element) => {
+const applyBackgroundImage = (element, elClass) => {
   try {
-    let allBackgroundImageClasses = [];
-    element.classList.forEach((i) => {
-      if (i.startsWith("bg-image")) {
-        allBackgroundImageClasses.push(i);
-      }
-    });
-    allBackgroundImageClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-image-");
-      if (classNameArr.length !== 2) {
-        throw Error("Out of bounds");
-      } else {
-        applyBackgroundImageToElement(element, classNameArr);
-      }
-    });
+    let classNameArr = splitElementClassName(elClass, "-image-");
+    if (classNameArr.length !== 2) {
+      throw Error("Out of bounds");
+    } else {
+      applyBackgroundImageToElement(element, classNameArr);
+    }
   } catch (error) {
     console.error(
       `Error while applying background image to: ${element}\n${error}`

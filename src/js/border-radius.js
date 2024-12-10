@@ -46,20 +46,14 @@ const applyBorderRadiusToElement = (element, classArr, classNameArrLength) => {
   }
 };
 
-const applyBorderRadius = (element) => {
+const applyBorderRadius = (element, className) => {
   try {
-    let allBorderRadiusClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("border-radius") && allBorderRadiusClasses.push(i);
-    });
-    allBorderRadiusClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length < 3 || classNameArr.length > 5) {
-        throw Error("Out of bounds");
-      } else {
-        applyBorderRadiusToElement(element, classNameArr, classNameArr.length);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length < 3 || classNameArr.length > 5) {
+      throw Error("Out of bounds");
+    } else {
+      applyBorderRadiusToElement(element, classNameArr, classNameArr.length);
+    }
   } catch (error) {
     console.error(
       `Error while applying border radius to: ${element}\n${error}`

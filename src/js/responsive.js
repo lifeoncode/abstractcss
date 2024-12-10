@@ -33,24 +33,13 @@ const handleTablet = (element, className) => {
   applyElementStyles();
 };
 
-const applyResponsive = (element) => {
+const applyResponsive = (element, className) => {
   try {
-    const allMobileClasses = [];
-    const allTabletClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("mob:") && allMobileClasses.push(i);
-      i.startsWith("tab:") && allTabletClasses.push(i);
-    });
-
-    if (IS_TABLET) {
-      allTabletClasses.forEach((i) => {
-        handleTablet(element, i);
-      });
+    if (className.startsWith("mob:") && IS_MOBILE) {
+      handleMobile(element, className);
     }
-    if (IS_MOBILE) {
-      allMobileClasses.forEach((i) => {
-        handleMobile(element, i);
-      });
+    if (className.startsWith("tab:") && IS_TABLET) {
+      handleTablet(element, className);
     }
   } catch (error) {
     console.error(

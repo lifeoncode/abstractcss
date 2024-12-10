@@ -32,20 +32,14 @@ const applyMarginToElement = (element, classArr, classArrLength) => {
   }
 };
 
-const applyMargin = (element) => {
+const applyMargin = (element, className) => {
   try {
-    let allMarginClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("margin") && allMarginClasses.push(i);
-    });
-    allMarginClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length < 2 || classNameArr.length > 3) {
-        throw Error("Out of bounds");
-      } else {
-        applyMarginToElement(element, classNameArr, classNameArr.length);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length < 2 || classNameArr.length > 3) {
+      throw Error("Out of bounds");
+    } else {
+      applyMarginToElement(element, classNameArr, classNameArr.length);
+    }
   } catch (error) {
     console.error(`Error while applying margin to: ${element}\n${error}`);
   }

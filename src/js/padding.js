@@ -32,20 +32,14 @@ const applyPaddingToElement = (element, classArr, classArrLength) => {
   }
 };
 
-const applyPadding = (element) => {
+const applyPadding = (element, className) => {
   try {
-    let allPaddingClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("padding") && allPaddingClasses.push(i);
-    });
-    allPaddingClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length < 2 || classNameArr.length > 3) {
-        throw Error("Out of bounds");
-      } else {
-        applyPaddingToElement(element, classNameArr, classNameArr.length);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length < 2 || classNameArr.length > 3) {
+      throw Error("Out of bounds");
+    } else {
+      applyPaddingToElement(element, classNameArr, classNameArr.length);
+    }
   } catch (error) {
     console.error(`Error while applying padding to: ${element}\n${error}`);
   }

@@ -67,56 +67,56 @@ const applyElementStyles = () => {
     let elementClasses = element.className.split(" ");
     elementClasses.forEach((elClass) => {
       if (elClass.startsWith("mob:") || elClass.startsWith("tab:")) {
-        applyResponsive(element);
+        applyResponsive(element, elClass);
       }
       if (elClass.startsWith("padding")) {
-        applyPadding(element);
+        applyPadding(element, elClass);
       }
       if (elClass.startsWith("margin")) {
-        applyMargin(element);
+        applyMargin(element, elClass);
       }
       if (elClass.startsWith("grid")) {
-        applyGrid(element);
+        applyGrid(element, elClass);
       }
       if (elClass.startsWith("grid-gap")) {
-        applyGridGap(element);
+        applyGridGap(element, elClass);
       }
       if (elClass.startsWith("column")) {
-        applyGridColumn(element);
+        applyGridColumn(element, elClass);
       }
       if (elClass.startsWith("row")) {
-        applyGridRow(element);
+        applyGridRow(element, elClass);
       }
       if (
         elClass.startsWith("color") ||
         elClass.startsWith("bg-color") ||
         elClass.startsWith("border-color")
       ) {
-        applyColor(element);
+        applyColor(element, elClass);
       }
       if (elClass.startsWith("width")) {
-        applyWidth(element);
+        applyWidth(element, elClass);
       }
       if (elClass.startsWith("height")) {
-        applyHeight(element);
+        applyHeight(element, elClass);
       }
       if (elClass.startsWith("font-size")) {
-        applyFontSize(element);
+        applyFontSize(element, elClass);
       }
       if (elClass.startsWith("line-height")) {
-        applyLineHeight(element);
+        applyLineHeight(element, elClass);
       }
       if (elClass.startsWith("border-width")) {
-        applyBorderWidth(element);
+        applyBorderWidth(element, elClass);
       }
       if (elClass.startsWith("border-radius")) {
-        applyBorderRadius(element);
+        applyBorderRadius(element, elClass);
       }
       if (elClass.startsWith("bg-image")) {
-        applyBackgroundImage(element);
+        applyBackgroundImage(element, elClass);
       }
       if (elClass.startsWith("_")) {
-        applyInteraction(element);
+        applyInteraction(element, elClass);
       }
     });
   });

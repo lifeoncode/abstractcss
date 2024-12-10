@@ -14,112 +14,102 @@ const createStyleTag = () => {
 const applyHoverInteraction = (element, classNameArr) => {
   let style = createStyleTag();
 
-  classNameArr.forEach((singleClass) => {
-    let singleClassArr = splitElementClassName(singleClass, "-");
+  if (classNameArr[1] == "scale") {
+    style.textContent += `
+          ._hover-scale-${classNameArr[2].replace(".", "\\.")}:hover {
+              transform: scale(${classNameArr[2]}) !important;
+          }
+      `;
+  }
 
-    if (singleClassArr[1] == "scale") {
-      style.textContent += `
-            ._hover-scale-${singleClassArr[2].replace(".", "\\.")}:hover {
-                transform: scale(${singleClassArr[2]}) !important;
-            }
-        `;
-    }
+  if (classNameArr[1] == "bg" && classNameArr[2] == "color") {
+    style.textContent += `
+          ._hover-bg-color-\\${classNameArr[3]}:hover {
+              background-color: ${classNameArr[3]} !important;
+          }
+          `;
+  }
 
-    if (singleClassArr[1] == "bg" && singleClassArr[2] == "color") {
-      style.textContent += `
-            ._hover-bg-color-\\${singleClassArr[3]}:hover {
-                background-color: ${singleClassArr[3]} !important;
-            }
-            `;
-    }
-
-    if (singleClassArr[1] == "color") {
-      style.textContent += `
-            ._hover-color-\\${singleClassArr[2]}:hover {
-                color: ${singleClassArr[2]} !important;
-            }
-            `;
-    }
-  });
+  if (classNameArr[1] == "color") {
+    style.textContent += `
+          ._hover-color-\\${classNameArr[2]}:hover {
+              color: ${classNameArr[2]} !important;
+          }
+          `;
+  }
 };
 
 const applyActiveInteraction = (element, classNameArr) => {
   let style = createStyleTag();
 
-  classNameArr.forEach((singleClass) => {
-    let singleClassArr = splitElementClassName(singleClass);
+  if (classNameArr[1] == "scale") {
+    style.textContent += `
+            ._active-scale-${classNameArr[2].replace(".", "\\.")}:active {
+                transform: scale(${classNameArr[2]}) !important;
+            }
+        `;
+  }
 
-    if (singleClassArr[1] == "scale") {
-      style.textContent += `
-              ._active-scale-${singleClassArr[2].replace(".", "\\.")}:active {
-                  transform: scale(${singleClassArr[2]}) !important;
-              }
-          `;
-    }
+  if (classNameArr[1] == "bg" && classNameArr[2] == "color") {
+    style.textContent += `
+            ._active-bg-color-\\${classNameArr[3]}:active {
+                background-color: ${classNameArr[3]} !important;
+            }
+            `;
+  }
 
-    if (singleClassArr[1] == "bg" && singleClassArr[2] == "color") {
-      style.textContent += `
-              ._active-bg-color-\\${singleClassArr[3]}:active {
-                  background-color: ${singleClassArr[3]} !important;
-              }
-              `;
-    }
-
-    if (singleClassArr[1] == "color") {
-      style.textContent += `
-              ._active-color-\\${singleClassArr[2]}:active {
-                  color: ${singleClassArr[2]} !important;
-              }
-              `;
-    }
-  });
+  if (classNameArr[1] == "color") {
+    style.textContent += `
+            ._active-color-\\${classNameArr[2]}:active {
+                color: ${classNameArr[2]} !important;
+            }
+            `;
+  }
 };
 
-const applyFocusInteraction = (element, classNameArr) => {};
+const applyFocusInteraction = (element, classNameArr) => {
+  let style = createStyleTag();
 
-const applyInteraction = (element) => {
+  if (classNameArr[1] == "scale") {
+    style.textContent += `
+            ._focus-scale-${classNameArr[2].replace(".", "\\.")}:focus {
+                transform: scale(${classNameArr[2]}) !important;
+            }
+        `;
+  }
+
+  if (classNameArr[1] == "bg" && classNameArr[2] == "color") {
+    style.textContent += `
+            ._focus-bg-color-\\${classNameArr[3]}:focus {
+                background-color: ${classNameArr[3]} !important;
+            }
+            `;
+  }
+
+  if (classNameArr[1] == "color") {
+    style.textContent += `
+            ._focus-color-\\${classNameArr[2]}:focus {
+                color: ${classNameArr[2]} !important;
+            }
+            `;
+  }
+};
+
+const applyInteraction = (element, className) => {
   try {
     element.style.transition = "all 0.3s ease";
 
-    let allHoverClasses = [];
-    let allActiveClasses = [];
-    let allFocusClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("_hover") && allHoverClasses.push(i);
-      i.startsWith("_active") && allActiveClasses.push(i);
-      i.startsWith("_focus") && allFocusClasses.push(i);
-    });
-
-    allHoverClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
-      if (classNameArr.length < 2 || classNameArr.length > 4) {
-        console.log(classNameArr);
-
-        throw Error("Out of bounds");
-      } else {
-        applyHoverInteraction(element, allHoverClasses);
-      }
-    });
-
-    allActiveClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
-      if (classNameArr.length < 2 || classNameArr.length > 4) {
-        console.log(classNameArr);
-        throw Error("Out of bounds");
-      } else {
-        applyActiveInteraction(element, allActiveClasses);
-      }
-    });
-
-    allFocusClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i);
-      if (classNameArr.length < 2 || classNameArr.length > 4) {
-        console.log(classNameArr);
-        throw Error("Out of bounds");
-      } else {
-        applyFocusInteraction(element, allFocusClasses);
-      }
-    });
+    let classNameArr = splitElementClassName(className);
+    if (classNameArr.length < 2 || classNameArr.length > 4) {
+      throw Error("Out of bounds");
+    } else {
+      className.startsWith("_hover") &&
+        applyHoverInteraction(element, classNameArr);
+      className.startsWith("_active") &&
+        applyActiveInteraction(element, classNameArr);
+      className.startsWith("_focus") &&
+        applyFocusInteraction(element, classNameArr);
+    }
   } catch (error) {
     console.error(`Error while applying interaction to: ${element}\n${error}`);
   }

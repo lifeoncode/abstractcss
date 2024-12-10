@@ -13,26 +13,14 @@ const applyColorToElement = (element, classArr, classArrLength) => {
   }
 };
 
-const applyColor = (element) => {
+const applyColor = (element, className) => {
   try {
-    let allColorClasses = [];
-    element.classList.forEach((i) => {
-      if (
-        i.startsWith("color") ||
-        i.startsWith("bg-color") ||
-        i.startsWith("border-color")
-      ) {
-        allColorClasses.push(i);
-      }
-    });
-    allColorClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length < 2 || classNameArr.length > 3) {
-        throw Error("Out of bounds");
-      } else {
-        applyColorToElement(element, classNameArr, classNameArr.length);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length < 2 || classNameArr.length > 3) {
+      throw Error("Out of bounds");
+    } else {
+      applyColorToElement(element, classNameArr, classNameArr.length);
+    }
   } catch (error) {
     console.error(`Error while applying color to: ${element}\n${error}`);
   }

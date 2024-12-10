@@ -33,20 +33,14 @@ const applyFontSizeToElement = (element, classArr) => {
   }
 };
 
-const applyFontSize = (element) => {
+const applyFontSize = (element, className) => {
   try {
-    let allFontSizeClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("font-size") && allFontSizeClasses.push(i);
-    });
-    allFontSizeClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length < 3 || classNameArr > 4) {
-        throw Error("Out of bounds");
-      } else {
-        applyFontSizeToElement(element, classNameArr);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length < 3 || classNameArr > 4) {
+      throw Error("Out of bounds");
+    } else {
+      applyFontSizeToElement(element, classNameArr);
+    }
   } catch (error) {
     console.error(`Error while applying font size to: ${element}\n${error}`);
   }

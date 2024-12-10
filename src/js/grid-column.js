@@ -13,20 +13,14 @@ const applyGridColumnToElement = (element, classNameArr) => {
   }
 };
 
-const applyGridColumn = (element) => {
+const applyGridColumn = (element, className) => {
   try {
-    let allGridColumClasses = [];
-    element.classList.forEach((i) => {
-      i.startsWith("column") && allGridColumClasses.push(i);
-    });
-    allGridColumClasses.forEach((i) => {
-      let classNameArr = splitElementClassName(i, "-");
-      if (classNameArr.length !== 3) {
-        throw Error("Out of bounds");
-      } else {
-        applyGridColumnToElement(element, classNameArr);
-      }
-    });
+    let classNameArr = splitElementClassName(className, "-");
+    if (classNameArr.length !== 3) {
+      throw Error("Out of bounds");
+    } else {
+      applyGridColumnToElement(element, classNameArr);
+    }
   } catch (error) {
     console.error(`Error while applying grid column to: ${element}\n${error}`);
   }
