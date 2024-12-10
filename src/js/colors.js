@@ -1,29 +1,62 @@
 "use strict";
 import splitElementClassName from "./util";
 
-const applyColorToElement = (element, classArr, classArrLength) => {
-  if (classArrLength === 2) {
-    element.style.color = `${classArr[1]}`;
-  } else if (classArrLength === 3) {
-    if (classArr[0] === "bg" || classArr[0] === "fill") {
-      element.style.backgroundColor = `${classArr[2]}`;
-    } else if (classArr[0] === "border") {
-      element.style.borderColor = `${classArr[2]}`;
+class Colors {
+  constructor(element, className) {
+    this.element = element;
+    this.className = className;
+  }
+
+  // handle text color
+  handleTextColor() {
+    try {
+      let classNameArr = splitElementClassName(this.className, "-");
+      if (classNameArr.length !== 2) {
+        throw Error("Out of bounds");
+      } else {
+        // Use `this.element` to access the element property
+        this.element.style.color = `${classNameArr[1]}`;
+      }
+    } catch (error) {
+      console.error(
+        `Error while applying text color to: ${this.element}\n${error}`
+      );
     }
   }
-};
 
-const applyColor = (element, className) => {
-  try {
-    let classNameArr = splitElementClassName(className, "-");
-    if (classNameArr.length < 2 || classNameArr.length > 3) {
-      throw Error("Out of bounds");
-    } else {
-      applyColorToElement(element, classNameArr, classNameArr.length);
+  // handle background color
+  handleBackgroundColor() {
+    try {
+      let classNameArr = splitElementClassName(this.className, "-");
+      if (classNameArr.length !== 3) {
+        throw Error("Out of bounds");
+      } else {
+        // Use `this.element` to access the element property
+        this.element.style.backgroundColor = `${classNameArr[2]}`;
+      }
+    } catch (error) {
+      console.error(
+        `Error while applying background color to: ${this.element}\n${error}`
+      );
     }
-  } catch (error) {
-    console.error(`Error while applying color to: ${element}\n${error}`);
   }
-};
 
-export default applyColor;
+  // handle border color
+  handleBorderColor() {
+    try {
+      let classNameArr = splitElementClassName(this.className, "-");
+      if (classNameArr.length !== 3) {
+        throw Error("Out of bounds");
+      } else {
+        // Use `this.element` to access the element property
+        this.element.style.borderColor = `${classNameArr[2]}`;
+      }
+    } catch (error) {
+      console.error(
+        `Error while applying border color to: ${this.element}\n${error}`
+      );
+    }
+  }
+}
+
+export default Colors;

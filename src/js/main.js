@@ -1,21 +1,9 @@
 import "../scss/index.scss";
-
-import applyPadding from "./padding.js";
-import applyMargin from "./margin.js";
-import applyGridGap from "./grid-gap.js";
-import applyColor from "./colors.js";
-import applyWidth from "./width.js";
-import applyGrid from "./grid.js";
-import applyFontSize from "./font-size.js";
-import applyLineHeight from "./line-height.js";
-import applyBorderWidth from "./border-width.js";
-import applyBorderRadius from "./border-radius.js";
-import applyHeight from "./height.js";
-import applyBackgroundImage from "./bg-image.js";
-import applyInteraction from "./interactions.js";
-import applyGridColumn from "./grid-column.js";
-import applyGridRow from "./grid-row.js";
-import applyResponsive from "./responsive.js";
+import Layout from "./layout.js";
+import Interactions from "./interactions.js";
+import Colors from "./colors.js";
+import Responsive from "./responsive.js";
+import Typography from "./typography.js";
 
 const scanHTMLElements = () => {
   const [...allElements] = [
@@ -67,56 +55,64 @@ const applyElementStyles = () => {
     let elementClasses = element.className.split(" ");
     elementClasses.forEach((elClass) => {
       if (elClass.startsWith("mob:") || elClass.startsWith("tab:")) {
-        applyResponsive(element, elClass);
+        new Responsive(element, elClass).handleResponsiveness();
       }
       if (elClass.startsWith("padding")) {
-        applyPadding(element, elClass);
+        new Layout(element, elClass).handlePadding();
       }
       if (elClass.startsWith("margin")) {
-        applyMargin(element, elClass);
+        new Layout(element, elClass).handleMargin();
       }
       if (elClass.startsWith("grid")) {
-        applyGrid(element, elClass);
+        new Layout(element, elClass).handleGrid();
       }
       if (elClass.startsWith("grid-gap")) {
-        applyGridGap(element, elClass);
+        new Layout(element, elClass).handleGridGap();
       }
       if (elClass.startsWith("column")) {
-        applyGridColumn(element, elClass);
+        new Layout(element, elClass).handleGridColumn();
       }
       if (elClass.startsWith("row")) {
-        applyGridRow(element, elClass);
+        new Layout(element, elClass).handleGridRow();
       }
-      if (
-        elClass.startsWith("color") ||
-        elClass.startsWith("bg-color") ||
-        elClass.startsWith("border-color")
-      ) {
-        applyColor(element, elClass);
+      if (elClass.startsWith("color")) {
+        // new Colors(element, elClass).handleTextColor();
+        let c = new Colors(element, elClass);
+        c.handleTextColor();
+      }
+      if (elClass.startsWith("bg-color")) {
+        // new Colors(element, elClass).handleBackgroundColor();
+        let c = new Colors(element, elClass);
+        c.handleBackgroundColor();
+      }
+      if (elClass.startsWith("border-color")) {
+        // new Colors(element, elClass).handleBorderColor();
+        let c = new Colors(element, elClass);
+        c.handleBorderColor();
       }
       if (elClass.startsWith("width")) {
-        applyWidth(element, elClass);
+        new Layout(element, elClass).handleWidth();
       }
       if (elClass.startsWith("height")) {
-        applyHeight(element, elClass);
+        new Layout(element, elClass).handleHeight();
       }
       if (elClass.startsWith("font-size")) {
-        applyFontSize(element, elClass);
+        new Typography(element, elClass).handleFontSize();
       }
       if (elClass.startsWith("line-height")) {
-        applyLineHeight(element, elClass);
+        new Typography(element, elClass).handleLineHeight();
       }
       if (elClass.startsWith("border-width")) {
-        applyBorderWidth(element, elClass);
+        new Layout(element, elClass).handleBorderWidth();
       }
       if (elClass.startsWith("border-radius")) {
-        applyBorderRadius(element, elClass);
+        new Layout(element, elClass).handleBorderRadius();
       }
       if (elClass.startsWith("bg-image")) {
-        applyBackgroundImage(element, elClass);
+        new Layout(element, elClass).handleBackgroundImage();
       }
       if (elClass.startsWith("_")) {
-        applyInteraction(element, elClass);
+        new Interactions(element, elClass).handleInteraction();
       }
     });
   });
