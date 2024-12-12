@@ -6,116 +6,46 @@ import Responsive from "./responsive.js";
 import Typography from "./typography.js";
 
 const scanHTMLElements = () => {
-  const [...allElements] = [
-    document?.querySelectorAll("body"),
-    document?.querySelectorAll("header"),
-    document?.querySelectorAll("nav"),
-    document?.querySelectorAll("ul"),
-    document?.querySelectorAll("ol"),
-    document?.querySelectorAll("footer"),
-    document?.querySelectorAll("main"),
-    document?.querySelectorAll("aside"),
-    document?.querySelectorAll("section"),
-    document?.querySelectorAll("div"),
-    document?.querySelectorAll("h1"),
-    document?.querySelectorAll("h2"),
-    document?.querySelectorAll("h3"),
-    document?.querySelectorAll("h4"),
-    document?.querySelectorAll("h5"),
-    document?.querySelectorAll("h6"),
-    document?.querySelectorAll("p"),
-    document?.querySelectorAll("span"),
-    document?.querySelectorAll("em"),
-    document?.querySelectorAll("code"),
-    document?.querySelectorAll("article"),
-    document?.querySelectorAll("a"),
-    document?.querySelectorAll("form"),
-    document?.querySelectorAll("input"),
-    document?.querySelectorAll("select"),
-    document?.querySelectorAll("textarea"),
-    document?.querySelectorAll("button"),
-    document?.querySelectorAll("ul"),
-    document?.querySelectorAll("ol"),
-    document?.querySelectorAll("li"),
-    document?.querySelectorAll("img"),
-  ];
-
-  let elements = [];
-  allElements.map((els) => {
-    els.forEach((el) => elements.push(el));
-  });
-
-  return elements;
+  const allElements = document.querySelectorAll("*");
+  return Array.from(allElements);
 };
 
 const applyElementStyles = () => {
   const elements = scanHTMLElements();
 
-  elements.forEach((element) => {
-    let elementClasses = element.className.split(" ");
-    elementClasses.forEach((elClass) => {
-      if (elClass.startsWith("mob:") || elClass.startsWith("tab:")) {
-        new Responsive(element, elClass).handleResponsiveness();
+  const handlers = {
+    "mob:": (el, cls) => new Responsive(el, cls).handleResponsiveness(),
+    "tab:": (el, cls) => new Responsive(el, cls).handleResponsiveness(),
+    padding: (el, cls) => new Layout(el, cls).handlePadding(),
+    margin: (el, cls) => new Layout(el, cls).handleMargin(),
+    grid: (el, cls) => new Layout(el, cls).handleGrid(),
+    "grid-gap": (el, cls) => new Layout(el, cls).handleGridGap(),
+    column: (el, cls) => new Layout(el, cls).handleGridColumn(),
+    row: (el, cls) => new Layout(el, cls).handleGridRow(),
+    color: (el, cls) => new Colors(el, cls).handleTextColor(),
+    "bg-color": (el, cls) => new Colors(el, cls).handleBackgroundColor(),
+    "border-color": (el, cls) => new Colors(el, cls).handleBorderColor(),
+    width: (el, cls) => new Layout(el, cls).handleWidth(),
+    height: (el, cls) => new Layout(el, cls).handleHeight(),
+    "font-size": (el, cls) => new Typography(el, cls).handleFontSize(),
+    "line-height": (el, cls) => new Typography(el, cls).handleLineHeight(),
+    "border-width": (el, cls) => new Layout(el, cls).handleBorderWidth(),
+    "border-radius": (el, cls) => new Layout(el, cls).handleBorderRadius(),
+    "bg-image": (el, cls) => new Layout(el, cls).handleBackgroundImage(),
+    _: (el, cls) => new Interactions(el, cls).handleInteraction(),
+  };
+
+  for (const element of elements) {
+    const classNames = element.className?.split(" ") || [];
+    for (const cls of classNames) {
+      for (const prefix in handlers) {
+        if (cls.startsWith(prefix)) {
+          handlers[prefix](element, cls);
+          break;
+        }
       }
-      if (elClass.startsWith("padding")) {
-        new Layout(element, elClass).handlePadding();
-      }
-      if (elClass.startsWith("margin")) {
-        new Layout(element, elClass).handleMargin();
-      }
-      if (elClass.startsWith("grid")) {
-        new Layout(element, elClass).handleGrid();
-      }
-      if (elClass.startsWith("grid-gap")) {
-        new Layout(element, elClass).handleGridGap();
-      }
-      if (elClass.startsWith("column")) {
-        new Layout(element, elClass).handleGridColumn();
-      }
-      if (elClass.startsWith("row")) {
-        new Layout(element, elClass).handleGridRow();
-      }
-      if (elClass.startsWith("color")) {
-        // new Colors(element, elClass).handleTextColor();
-        let c = new Colors(element, elClass);
-        c.handleTextColor();
-      }
-      if (elClass.startsWith("bg-color")) {
-        // new Colors(element, elClass).handleBackgroundColor();
-        let c = new Colors(element, elClass);
-        c.handleBackgroundColor();
-      }
-      if (elClass.startsWith("border-color")) {
-        // new Colors(element, elClass).handleBorderColor();
-        let c = new Colors(element, elClass);
-        c.handleBorderColor();
-      }
-      if (elClass.startsWith("width")) {
-        new Layout(element, elClass).handleWidth();
-      }
-      if (elClass.startsWith("height")) {
-        new Layout(element, elClass).handleHeight();
-      }
-      if (elClass.startsWith("font-size")) {
-        new Typography(element, elClass).handleFontSize();
-      }
-      if (elClass.startsWith("line-height")) {
-        new Typography(element, elClass).handleLineHeight();
-      }
-      if (elClass.startsWith("border-width")) {
-        new Layout(element, elClass).handleBorderWidth();
-      }
-      if (elClass.startsWith("border-radius")) {
-        new Layout(element, elClass).handleBorderRadius();
-      }
-      if (elClass.startsWith("bg-image")) {
-        new Layout(element, elClass).handleBackgroundImage();
-      }
-      if (elClass.startsWith("_")) {
-        new Interactions(element, elClass).handleInteraction();
-      }
-    });
-  });
+    }
+  }
 };
 
 applyElementStyles();

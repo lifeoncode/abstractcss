@@ -237,15 +237,13 @@ img {
 .fit-cover {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .fit-contain {
   height: 100%;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .display-none {
@@ -1329,4 +1327,6 @@ span a {
 .table-minimal-outline {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2156862745);
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */
