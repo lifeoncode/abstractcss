@@ -1,5 +1,5 @@
 {
-  "name": "ui_library",
+  "name": "abstract_css",
   "version": "1.1.0",
   "description": "A utility css library",
   "type": "commonjs",
@@ -22,17 +22,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifeoncode/ui_library.git"
+    "url": "https://github.com/lifeoncode/abstract_css.git"
   },
-  "homepage": "https://lifeoncode.github.io/ui_library",
+  "homepage": "https://lifeoncode.github.io/abstract_css",
   "private": false,
   "devDependencies": {
     "sass-embedded": "^1.82.0",
     "vite": "^6.0.1"
   },
   "dependencies": {
+    "abstract_css": "file:",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "ui_library": "file:"
+    "postcss": "^8.4.49"
   }
 }
