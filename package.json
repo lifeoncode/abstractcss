@@ -1,5 +1,5 @@
 {
-  "name": "abstract_css",
+  "name": "abstractcss",
   "version": "1.1.0",
   "description": "A utility css library",
   "type": "commonjs",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "keywords": [
+    "developer tools",
     "css",
     "ui",
     "library",
@@ -22,16 +23,16 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifeoncode/abstract_css.git"
+    "url": "https://github.com/lifeoncode/abstractcss.git"
   },
-  "homepage": "https://lifeoncode.github.io/abstract_css",
+  "homepage": "https://lifeoncode.github.io/abstractcss",
   "private": false,
   "devDependencies": {
     "sass-embedded": "^1.82.0",
     "vite": "^6.0.1"
   },
   "dependencies": {
-    "abstract_css": "file:",
+    "abstractcss": "file:",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49"
   }

@@ -6,8 +6,8 @@ export default defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: isCSSBuild ? "./src/scss/index.scss" : "./src/js/main.js",
-        name: isCSSBuild ? "abstract_css" : "abstract_css_js",
-        fileName: (format) => `abstract_css.${isCSSBuild ? "css" : "js"}`,
+        name: isCSSBuild ? "abstractcss" : "abstractcss_js",
+        fileName: (format) => `abstractcss.${isCSSBuild ? "css" : "js"}`,
         formats: isCSSBuild ? ["es"] : ["es", "umd"],
       },
       rollupOptions: {
