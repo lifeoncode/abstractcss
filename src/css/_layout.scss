@@ -1,0 +1,812 @@
+// body container
+.container {
+  margin: 0 auto;
+  width: 1600px;
+  transition: all 0.3s ease;
+
+  @media only screen and (max-width: 1720px) {
+    width: 1400px;
+  }
+  @media only screen and (max-width: 1420px) {
+    width: 94%;
+  }
+}
+
+// positioning
+.relative {
+  position: relative;
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+.fixed {
+  position: fixed;
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+.absolute {
+  position: absolute;
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+.sticky {
+  position: sticky;
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+
+// z index
+.z-index-1 {
+  z-index: 1;
+}
+.z-index-2 {
+  z-index: 2;
+}
+.z-index-3 {
+  z-index: 3;
+}
+.z-index-4 {
+  z-index: 4;
+}
+.z-index-5 {
+  z-index: 5;
+}
+.z-index-6 {
+  z-index: 6;
+}
+.z-index-7 {
+  z-index: 7;
+}
+.z-index-8 {
+  z-index: 8;
+}
+.z-index-9 {
+  z-index: 9;
+}
+
+// text align
+.text-center {
+  text-align: center;
+  &-tab {
+    @media only screen and (max-width: 1080px) {
+      text-align: center;
+    }
+  }
+  &-mob {
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+    }
+  }
+}
+.text-right {
+  text-align: right;
+  &-tab {
+    @media only screen and (max-width: 1080px) {
+      text-align: right;
+    }
+  }
+  &-mob {
+    @media only screen and (max-width: 600px) {
+      text-align: right;
+    }
+  }
+}
+.text-left {
+  text-align: left;
+  &-tab {
+    @media only screen and (max-width: 1080px) {
+      text-align: left;
+    }
+  }
+  &-mob {
+    @media only screen and (max-width: 600px) {
+      text-align: left;
+    }
+  }
+}
+
+// content overflow
+.overflow {
+  &-auto {
+    overflow: auto;
+  }
+  &-scroll {
+    overflow: scroll;
+  }
+  &-hidden {
+    overflow: hidden;
+  }
+  &-x-auto {
+    overflow-x: auto;
+  }
+  &-x-scroll {
+    overflow-x: scroll;
+  }
+  &-x-hidden {
+    overflow-x: hidden;
+  }
+  &-y-auto {
+    overflow-y: auto;
+  }
+  &-y-scroll {
+    overflow-y: scroll;
+  }
+  &-y-hidden {
+    overflow-y: hidden;
+  }
+}
+
+// object fit
+.fit-cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.fit-contain {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+// display types
+.display {
+  &-none {
+    display: none;
+    &-tab {
+      @media only screen and (max-width: 1080px) {
+        display: none;
+      }
+    }
+    &-mob {
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+  &-inline {
+    display: inline;
+    &-tab {
+      @media only screen and (max-width: 1080px) {
+        display: inline;
+      }
+    }
+    &-mob {
+      @media only screen and (max-width: 600px) {
+        display: inline;
+      }
+    }
+  }
+  &-inline-block {
+    display: inline-block;
+    &-tab {
+      @media only screen and (max-width: 1080px) {
+        display: inline-block;
+      }
+    }
+    &-mob {
+      @media only screen and (max-width: 600px) {
+        display: inline-block;
+      }
+    }
+  }
+  &-block {
+    display: block;
+    &-tab {
+      @media only screen and (max-width: 1080px) {
+        display: block;
+      }
+    }
+    &-mob {
+      @media only screen and (max-width: 600px) {
+        display: block;
+      }
+    }
+  }
+}
+
+// width
+.width {
+  &-min {
+    width: 10%;
+  }
+  &-med {
+    width: 50%;
+  }
+  &-max {
+    width: 100%;
+  }
+  // tab
+  &-tab-min {
+    @media only screen and (max-width: 1080px) {
+      width: 10%;
+    }
+  }
+  &-tab-med {
+    @media only screen and (max-width: 1080px) {
+      width: 50%;
+    }
+  }
+  &-tab-max {
+    @media only screen and (max-width: 1080px) {
+      width: 100%;
+    }
+  }
+  // mobile
+  &-mob-min {
+    @media only screen and (max-width: 600px) {
+      width: 10%;
+    }
+  }
+  &-mob-med {
+    @media only screen and (max-width: 600px) {
+      width: 50%;
+    }
+  }
+  &-mob-max {
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}
+
+// height
+.height {
+  &-min {
+    height: 10%;
+  }
+  &-med {
+    height: 50%;
+  }
+  &-max {
+    height: 100%;
+  }
+}
+
+// border
+.border {
+  border: 1px solid #000;
+  &-none {
+    border: 0;
+  }
+  &-min {
+    border: 1px solid #000;
+  }
+  &-med {
+    border: 5px solid #000;
+  }
+  &-max {
+    border: 10px solid #000;
+  }
+}
+.border-dash {
+  border: 1px dashed #000;
+  &-min {
+    border: 1px dashed #000;
+  }
+  &-med {
+    border: 5px dashed #000;
+  }
+  &-max {
+    border: 10px dashed #000;
+  }
+}
+.border-dot {
+  border: 1px dotted #000;
+  &-min {
+    border: 1px dotted #000;
+  }
+  &-med {
+    border: 5px dotted #000;
+  }
+  &-max {
+    border: 10px dotted #000;
+  }
+}
+.border-double {
+  border: 1px double #000;
+  &-min {
+    border: 1px double #000;
+  }
+  &-med {
+    border: 5px double #000;
+  }
+  &-max {
+    border: 10px double #000;
+  }
+}
+.border-groove {
+  border: 1px groove #000;
+  &-min {
+    border: 1px groove #000;
+  }
+  &-med {
+    border: 5px groove #000;
+  }
+  &-max {
+    border: 10px groove #000;
+  }
+}
+.border-inset {
+  border: 1px inset #000;
+  &-min {
+    border: 1px inset #000;
+  }
+  &-med {
+    border: 5px inset #000;
+  }
+  &-max {
+    border: 10px inset #000;
+  }
+}
+.border-outset {
+  border: 1px outset #000;
+  &-min {
+    border: 1px outset #000;
+  }
+  &-med {
+    border: 5px outset #000;
+  }
+  &-max {
+    border: 10px outset #000;
+  }
+}
+.border-top {
+  border-top: 1px solid #000;
+  &-min {
+    border-top: 1px solid #000;
+  }
+  &-med {
+    border-top: 5px solid #000;
+  }
+  &-max {
+    border-top: 10px solid #000;
+  }
+}
+.border-top-dash {
+  border-top: 1px dashed #000;
+  &-min {
+    border-top: 1px dashed #000;
+  }
+  &-med {
+    border-top: 5px dashed #000;
+  }
+  &-max {
+    border-top: 10px dashed #000;
+  }
+}
+.border-top-dot {
+  border-top: 1px dotted #000;
+  &-min {
+    border-top: 1px dotted #000;
+  }
+  &-med {
+    border-top: 5px dotted #000;
+  }
+  &-max {
+    border-top: 10px dotted #000;
+  }
+}
+.border-top-double {
+  border-top: 1px double #000;
+  &-min {
+    border-top: 1px double #000;
+  }
+  &-med {
+    border-top: 5px double #000;
+  }
+  &-max {
+    border-top: 10px double #000;
+  }
+}
+.border-top-groove {
+  border-top: 1px groove #000;
+  &-min {
+    border-top: 1px groove #000;
+  }
+  &-med {
+    border-top: 5px groove #000;
+  }
+  &-max {
+    border-top: 10px groove #000;
+  }
+}
+.border-top-inset {
+  border-top: 1px inset #000;
+  &-min {
+    border-top: 1px inset #000;
+  }
+  &-med {
+    border-top: 5px inset #000;
+  }
+  &-max {
+    border-top: 10px inset #000;
+  }
+}
+.border-top-outset {
+  border-top: 1px outset #000;
+  &-min {
+    border-top: 1px outset #000;
+  }
+  &-med {
+    border-top: 5px outset #000;
+  }
+  &-max {
+    border-top: 10px outset #000;
+  }
+}
+.border-bottom {
+  border-bottom: 1px solid #000;
+  &-min {
+    border-bottom: 1px solid #000;
+  }
+  &-med {
+    border-bottom: 5px solid #000;
+  }
+  &-max {
+    border-bottom: 10px solid #000;
+  }
+}
+.border-bottom-dash {
+  border-bottom: 1px dashed #000;
+  &-min {
+    border-bottom: 1px dashed #000;
+  }
+  &-med {
+    border-bottom: 5px dashed #000;
+  }
+  &-max {
+    border-bottom: 10px dashed #000;
+  }
+}
+.border-bottom-dot {
+  border-bottom: 1px dotted #000;
+  &-min {
+    border-bottom: 1px dotted #000;
+  }
+  &-med {
+    border-bottom: 5px dotted #000;
+  }
+  &-max {
+    border-bottom: 10px dotted #000;
+  }
+}
+.border-bottom-double {
+  border-bottom: 1px double #000;
+  &-min {
+    border-bottom: 1px double #000;
+  }
+  &-med {
+    border-bottom: 5px double #000;
+  }
+  &-max {
+    border-bottom: 10px double #000;
+  }
+}
+.border-bottom-groove {
+  border-bottom: 1px groove #000;
+  &-min {
+    border-bottom: 1px groove #000;
+  }
+  &-med {
+    border-bottom: 5px groove #000;
+  }
+  &-max {
+    border-bottom: 10px groove #000;
+  }
+}
+.border-bottom-inset {
+  border-bottom: 1px inset #000;
+  &-min {
+    border-bottom: 1px inset #000;
+  }
+  &-med {
+    border-bottom: 5px inset #000;
+  }
+  &-max {
+    border-bottom: 10px inset #000;
+  }
+}
+.border-bottom-outset {
+  border-bottom: 1px outset #000;
+  &-min {
+    border-bottom: 1px outset #000;
+  }
+  &-med {
+    border-bottom: 5px outset #000;
+  }
+  &-max {
+    border-bottom: 10px outset #000;
+  }
+}
+.border-left {
+  border-left: 1px solid #000;
+  &-min {
+    border-left: 1px solid #000;
+  }
+  &-med {
+    border-left: 5px solid #000;
+  }
+  &-max {
+    border-left: 10px solid #000;
+  }
+}
+.border-left-dash {
+  border-left: 1px dashed #000;
+  &-min {
+    border-left: 1px dashed #000;
+  }
+  &-med {
+    border-left: 5px dashed #000;
+  }
+  &-max {
+    border-left: 10px dashed #000;
+  }
+}
+.border-left-dot {
+  border-left: 1px dotted #000;
+  &-min {
+    border-left: 1px dotted #000;
+  }
+  &-med {
+    border-left: 5px dotted #000;
+  }
+  &-max {
+    border-left: 10px dotted #000;
+  }
+}
+.border-left-double {
+  border-left: 1px double #000;
+  &-min {
+    border-left: 1px double #000;
+  }
+  &-med {
+    border-left: 5px double #000;
+  }
+  &-max {
+    border-left: 10px double #000;
+  }
+}
+.border-left-groove {
+  border-left: 1px groove #000;
+  &-min {
+    border-left: 1px groove #000;
+  }
+  &-med {
+    border-left: 5px groove #000;
+  }
+  &-max {
+    border-left: 10px groove #000;
+  }
+}
+.border-left-inset {
+  border-left: 1px inset #000;
+  &-min {
+    border-left: 1px inset #000;
+  }
+  &-med {
+    border-left: 5px inset #000;
+  }
+  &-max {
+    border-left: 10px inset #000;
+  }
+}
+.border-left-outset {
+  border-left: 1px outset #000;
+  &-min {
+    border-left: 1px outset #000;
+  }
+  &-med {
+    border-left: 5px outset #000;
+  }
+  &-max {
+    border-left: 10px outset #000;
+  }
+}
+.border-right {
+  border-right: 1px solid #000;
+  &-min {
+    border-right: 1px solid #000;
+  }
+  &-med {
+    border-right: 5px solid #000;
+  }
+  &-max {
+    border-right: 10px solid #000;
+  }
+}
+.border-right-dash {
+  border-right: 1px dashed #000;
+  &-min {
+    border-right: 1px dashed #000;
+  }
+  &-med {
+    border-right: 5px dashed #000;
+  }
+  &-max {
+    border-right: 10px dashed #000;
+  }
+}
+.border-right-dot {
+  border-right: 1px dotted #000;
+  &-min {
+    border-right: 1px dotted #000;
+  }
+  &-med {
+    border-right: 5px dotted #000;
+  }
+  &-max {
+    border-right: 10px dotted #000;
+  }
+}
+.border-right-double {
+  border-right: 1px double #000;
+  &-min {
+    border-right: 1px double #000;
+  }
+  &-med {
+    border-right: 5px double #000;
+  }
+  &-max {
+    border-right: 10px double #000;
+  }
+}
+.border-right-groove {
+  border-right: 1px groove #000;
+  &-min {
+    border-right: 1px groove #000;
+  }
+  &-med {
+    border-right: 5px groove #000;
+  }
+  &-max {
+    border-right: 10px groove #000;
+  }
+}
+.border-right-inset {
+  border-right: 1px inset #000;
+  &-min {
+    border-right: 1px inset #000;
+  }
+  &-med {
+    border-right: 5px inset #000;
+  }
+  &-max {
+    border-right: 10px inset #000;
+  }
+}
+.border-right-outset {
+  border-right: 1px outset #000;
+  &-min {
+    border-right: 1px outset #000;
+  }
+  &-med {
+    border-right: 5px outset #000;
+  }
+  &-max {
+    border-right: 10px outset #000;
+  }
+}
+
+// border radius
+.border-radius {
+  &-min {
+    border-radius: 5px;
+  }
+  &-med {
+    border-radius: 50px;
+  }
+  &-max {
+    border-radius: 100px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// flex display
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-col-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-space-even {
+    justify-content: space-evenly;
+  }
+  &-space-around {
+    justify-content: space-around;
+  }
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-align-start {
+    align-items: flex-start;
+  }
+  &-align-end {
+    align-items: flex-end;
+  }
+}
+
+.grid-auto {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+// align
+.self-align {
+  &-top {
+    align-self: flex-start;
+  }
+  &-center {
+    align-self: center;
+  }
+  &-bottom {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,89 @@
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+
+  &-small {
+    @extend .btn;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+
+  &-large {
+    @extend .btn;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+
+  &-sharp {
+    @extend .btn;
+    border-radius: 0;
+  }
+
+  &-pill {
+    @extend .btn;
+    border-radius: 30px;
+  }
+
+  &-round {
+    @extend .btn;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &-small {
+      @extend .btn-round;
+      width: 40px;
+      height: 40px;
+    }
+
+    &-large {
+      @extend .btn-round;
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &-outline {
+    @extend .btn;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &-ghost {
+    @extend .btn;
+    background-color: transparent;
+    color: #222;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &:hover {
+    background-color: #444;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
