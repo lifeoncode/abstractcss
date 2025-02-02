@@ -153,6 +153,7 @@ out
 
 # test folder
 test-folder/
+testfolder/
 
 # Docusaurus cache and generated files
 .docusaurus
